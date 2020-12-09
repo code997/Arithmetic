@@ -108,7 +108,6 @@ async function continueIndex (head, warList) {
   let i = 1;
   let current = head;
   while (warList.count() > 2) {
-    await sleep(100);
     if (current.next.element === 'head') {
       current = current.next.next;
     } else {
@@ -116,13 +115,13 @@ async function continueIndex (head, warList) {
     }
     if (i % 3 === 0) {
       warList.remove(current.element);
-      console.log('移除' + current.element);
     }
     i++;
   }
   warList.display();
 }
 continueIndex(warList.head, warList);
+console.log(warList);
 
 function sleep (time) {
   return new Promise((resolve) => {
