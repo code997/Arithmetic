@@ -121,7 +121,6 @@ async function continueIndex (head, warList) {
   warList.display();
 }
 continueIndex(warList.head, warList);
-console.log(warList);
 
 function sleep (time) {
   return new Promise((resolve) => {
