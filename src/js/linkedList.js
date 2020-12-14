@@ -9,7 +9,7 @@ class Node {
 class LList {
   constructor () {
     this.head = new Node('head');
-    // this.head.next = this.head; // 循环链表
+    this.head.next = this.head; // 循环链表
   }
   insert (newElement, element) {
     const newNode = new Node(newElement);
@@ -154,35 +154,42 @@ cities.insert('Nanyang', 'Shangqiu');
 
 // 输入：1-->2-->3-->4-->5
 // 输出：2-->1-->4-->3-->5
-function swapPairs (head) {
-  const dummy = new Node(null);
-  dummy.next = head.next;
-  let prev = dummy;
-  let current = prev.next;
-  while (current.next && current.next.next) {
-    let next = current.next;
-    prev.next = current.next;
-    current.next = next.next;
-    next.next = current;
-    prev = current;
-    current = current.next;
-  }
-  return dummy.next;
-}
-let nlist = new LList();
-nlist.insert(1, 'head');
-nlist.insert(2, 1);
-nlist.insert(3, 2);
-nlist.insert(4, 3);
-nlist.insert(5, 4);
-nlist.insert(6, 5);
-nlist.insert(7, 6);
-nlist.display();
-console.log('=========1');
-nlist = swapPairs(nlist.head);
-console.log(nlist);
+// function swapPairs (head) {
+//   const dummy = new Node(null);
+//   dummy.next = head.next;
+//   let prev = dummy;
+//   let current = prev.next;
+//   while (current.next && current.next.next) {
+//     let next = current.next;
+//     prev.next = current.next;
+//     current.next = next.next;
+//     next.next = current;
+//     prev = current;
+//     current = current.next;
+//   }
+//   return dummy.next;
+// }
+// let nlist = new LList();
+// nlist.insert(1, 'head');
+// nlist.insert(2, 1);
+// nlist.insert(3, 2);
+// nlist.insert(4, 3);
+// nlist.insert(5, 4);
+// nlist.insert(6, 5);
+// nlist.insert(7, 6);
+// nlist.display();
+// console.log('=========1');
+// nlist = swapPairs(nlist.head);
+// console.log(nlist);
 // cities.display();
 
+/**
+ * 判断一个链表是否有环
+ * 1.定时0.5s或1s，看是否走完
+ * 2.用Set记录访问过的节点，每次判断Set中是否有相同记录
+ * 3.快慢指针，慢指针每次走一次、快指针每次走两个
+*/
+// function ll
 
 
 /**
